@@ -4,43 +4,129 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Dreamland</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Dreamland.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/Dreamland.css" asp-append-version="true" />
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/dreamland.js" asp-append-version="true"></script>
+
     <style>
         html {
             overflow-x: hidden;
         }
-        
+
         .header-logo {
-            max-width: 100%;
+            width: 100%;
+        }
+
+        footer {
+            position: relative !important;
+            margin: 2em 0em 2em 0em;
+        }
+
+        .footer-logo {
+            width: 80%;
+        }
+
+        .footer-social-icon {
+        }
+
+            .footer-social-icon.facebook-icon {
+                display: block;
+                margin-left: 40%;
+            }
+
+            .footer-social-icon.facebook-icon {
+                display: block;
+                margin-right: 100%;
+            }
+
+        @@media screen and (max-width: 992px) {
+            .footer-logo {
+                width: 60%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer-contact {
+                display: block;
+                margin: 1.5em auto 0em auto;
+                text-align: center;
+            }
+
+            .footer-social {
+                display: block;
+                margin: 1.5em auto 0em auto;
+                text-align: center;
+            }
+
+            .footer-social-icon {
+            }
+
+                .footer-social-icon.facebook-icon {
+                    display: block;
+                    margin-left: 80%;
+                }
+
+                .footer-social-icon.youtube-icon {
+                    display: block;
+                    margin-right: 80%;
+                }
+
+            .footer-copyright {
+                display: block;
+                margin: 1.5em auto 0em auto;
+                text-align: center;
+            }
+        }
+
+        @@media screen and (max-width: 600px) {
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container-fluid">
-            <img class="header-logo" src="~/images/headerimage.jpg"/>
+            <a asp-page="/Index"><img class="header-logo" src="~/images/headerimage.jpg" /></a>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Dreamland</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-page="/Index">Dreamland</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
+                    <form class="d-flex">
+                        @*<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">*@
+                        @*<button class="btn btn-outline-success" type="submit">Search</button>*@
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -49,16 +135,34 @@
 
     <footer class="footer">
         <div class="container-fluid">
-            <div class="footer-logo">
-
+            <div class="row text-muted">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div class="footer-logo">
+                        <a asp-page="/Index"><img class="footer-logo" src="~/images/Logo-Final-Blue.png" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-contact">
+                    <span>ติดต่อทั่วไป</span><br />
+                    <span>Tel. : 02-422-0371-3</span><br />
+                    <span>Email: Dreamland.krungnon@gmail.com</span>
+                </div>
+                <div class="col-lg-2 col-md-12 footer-social">
+                    <span>Connect with Us</span>
+                    <div class="row">
+                        <div class="col-lg-4 col-6"><img class="footer-social-icon facebook-icon" src="~/images/icons/icons8-facebook-48.png" /></div>
+                        <div class="col-lg-8 col-6"><img class="footer-social-icon youtube-icon" src="~/images/icons/icons8-youtube-logo-48.png" /></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-copyright">
+                    <span>&copy;Dreamland Property Co.,LTD. All.</span><br />
+                    <span>Right Reserv.</span><br />
+                    <span>นโยบายความเป็นส่วนตัว</span>
+                </div>
             </div>
-            &copy; 2022 - Dreamland - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/dreamland.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
