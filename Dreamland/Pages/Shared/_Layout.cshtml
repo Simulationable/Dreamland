@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/dreamland.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="~/js/dreamland.js" asp-append-version="true"></script>
 </head>
 <body>
     <header>
@@ -109,14 +105,12 @@
             </div>
         </div>
     </footer>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/dreamland.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        hamburger.addEventListener("click", function() {
-            this.classList.toggle("close");
-        });
-    </script>
+    
 </body>
 </html>
