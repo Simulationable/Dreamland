@@ -1,0 +1,27 @@
+﻿:root {
+    --maincolor : #0453A2;
+}
+
+.navbar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown-menu {
+    border: 0px;
+}
+
+.nav-link-head {
+    color: var(--maincolor) !important;
+    font-weight: bold;
+}
+
+.nav-link-item {
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+}
+
+    .nav-link-item:hover {
+        color: var(--maincolor) !important;
+        border-bottom: 3px solid var(--maincolor) !important;
+    }

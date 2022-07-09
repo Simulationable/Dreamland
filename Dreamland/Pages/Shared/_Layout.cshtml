@@ -4,118 +4,64 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Dreamland</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/Dreamland.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/dreamland.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
 
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/js/dreamland.js" asp-append-version="true"></script>
-
-    <style>
-        html {
-            overflow-x: hidden;
-        }
-
-        .header-logo {
-            width: 100%;
-        }
-
-        footer {
-            position: relative !important;
-            margin: 2em 0em 2em 0em;
-        }
-
-        .footer-logo {
-            width: 80%;
-        }
-
-        .footer-social-icon {
-        }
-
-            .footer-social-icon.facebook-icon {
-                display: block;
-                margin-left: 40%;
-            }
-
-            .footer-social-icon.facebook-icon {
-                display: block;
-                margin-right: 100%;
-            }
-
-        @@media screen and (max-width: 992px) {
-            .footer-logo {
-                width: 60%;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .footer-contact {
-                display: block;
-                margin: 1.5em auto 0em auto;
-                text-align: center;
-            }
-
-            .footer-social {
-                display: block;
-                margin: 1.5em auto 0em auto;
-                text-align: center;
-            }
-
-            .footer-social-icon {
-            }
-
-                .footer-social-icon.facebook-icon {
-                    display: block;
-                    margin-left: 80%;
-                }
-
-                .footer-social-icon.youtube-icon {
-                    display: block;
-                    margin-right: 80%;
-                }
-
-            .footer-copyright {
-                display: block;
-                margin: 1.5em auto 0em auto;
-                text-align: center;
-            }
-        }
-
-        @@media screen and (max-width: 600px) {
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="container-fluid">
             <a asp-page="/Index"><img class="header-logo" src="~/images/headerimage.jpg" /></a>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
             <div class="container-fluid">
                 <a class="navbar-brand"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Index">Dreamland</a>
+                            <a class="nav-link nav-link-head active" aria-current="page" asp-page="/Index">DREAMLAND</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                            <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ทาวน์โฮม
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" asp-page="/Index">DREAM PRIVA</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                บ้านเดี่ยว/บ้านแฝด
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-page="/Index">RATIROM DELUXE</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link nav-link-item" aria-current="page" asp-page="/Index">โปรโมชั่น</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-item" aria-current="page" asp-page="/Index">ลูกบ้านสัมพันธ์</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                แบรนด์ดรีมแลนด์
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-page="/Index">OUR DREAM</a></li>
+                                <li><a class="dropdown-item" asp-page="/Index">COMPANY</a></li>
+                                <li><a class="dropdown-item" asp-page="/Index">DREAMLAND KINGDOM</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-item" aria-current="page" asp-page="/Index">ติดต่อเรา</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -127,13 +73,13 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-fluid page-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer">
+    <footer class="footer border-top">
         <div class="container-fluid">
             <div class="row text-muted">
                 <div class="col-lg-1">
@@ -165,5 +111,12 @@
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function() {
+            this.classList.toggle("close");
+        });
+    </script>
 </body>
 </html>
