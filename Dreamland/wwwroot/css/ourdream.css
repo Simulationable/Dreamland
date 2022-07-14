@@ -1,0 +1,34 @@
+﻿.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.our-image-left {
+    width: 50%;
+    float: right;
+}
+
+.our-content {
+    margin: 2em 0px 0px 0px;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 992px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        width: 100%;
+        display: block;
+    }
+
+    .our-image-left {
+        display: block;
+        margin: 0px auto 0px auto;
+        width: 100%;
+    }
+}

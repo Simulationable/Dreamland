@@ -1,8 +1,4 @@
-﻿:root {
-    --maincolor : #0453A2;
-}
-
-.navbar {
+﻿.navbar {
     margin-left: auto;
     margin-right: auto;
 }
@@ -19,6 +15,7 @@
 .nav-link-item {
     border-bottom: 3px solid transparent;
     font-weight: 600;
+    margin: 0px 1em 0px 1em;
 }
 
     .nav-link-item:hover {

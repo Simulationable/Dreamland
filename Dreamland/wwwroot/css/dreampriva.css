@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none
+}
+
+@media screen and (max-width: 992px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        width: 100%;
+        display: block;
+    }
+}

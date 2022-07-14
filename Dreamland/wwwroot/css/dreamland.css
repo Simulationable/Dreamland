@@ -1,15 +1,69 @@
-﻿
+﻿:root {
+    --maincolor: #0453A2;
+}
+
+@@font-face {
+    font-family: db_sathorn_xregular;
+    src: url('../font/db_sathorn_x_v3.2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     overflow-x: hidden;
 }
 
+body {
+    font-family: db_sathorn_xregular !important;
+}
+.maincolor {
+    color: var(--maincolor);
+}
+
+.mainsection {
+    background-color: var(--maincolor);
+    height: 3px !important;
+}
+
 .header-logo {
-    width: 100%;
+    display: block;
+    width: 15%;
+    margin: 4em auto 4em auto;
+}
+
+bold {
+    font-weight: bold;
 }
 
 .page-content {
     margin: 2em 0em 0em 0em;
+    padding: 0px;
 }
+
+.page-content.page-header {
+    padding: 0px;
+}
+
+.title {
+    color: var(--maincolor);
+    margin: 2em 0px 0px 0px;
+}
+
+.dreamland-button {
+    display: block;
+    margin: 2em auto 0px auto;
+    border: 2px solid transparent;
+    background-color: var(--maincolor);
+    color: white;
+    border-radius: 6px;
+    height: 42.5px;
+    width: 130px;
+}
+
+    .dreamland-button:hover {
+        border: 2px solid #5e97d1;
+        background-color: #5e97d1;
+    }
 
 footer {
     position: relative !important;
@@ -35,6 +89,16 @@ footer {
     }
 
 @media screen and (max-width: 992px) {
+    .header-logo {
+        width: 40%;
+        margin: 2em auto 2em auto;
+    }
+
+    .page-content {
+        margin: 0em 0em 0em 0em;
+        padding: 0px;
+    }
+
     .footer-logo {
         width: 60%;
         display: block;
@@ -58,11 +122,13 @@ footer {
     }
 
         .footer-social-icon.facebook-icon {
+            width: 20%;
             display: block;
             margin-left: 80%;
         }
 
         .footer-social-icon.youtube-icon {
+            width: 20%;
             display: block;
             margin-right: 80%;
         }
