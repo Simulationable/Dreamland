@@ -1,9 +1,6 @@
-﻿.pc {
-    display: block;
-}
-
-.mobile {
-    display: none;
+﻿
+.our-content {
+    font-size: 22px;
 }
 
 .our-image-left {
@@ -11,24 +8,21 @@
     float: right;
 }
 
-.our-content {
-    margin: 2em 0px 0px 0px;
-    font-size: 24px;
+.our-text-right {
+    margin-top: 1em;
 }
 
 @media screen and (max-width: 992px) {
-    .pc {
-        display: none;
-    }
-
-    .mobile {
-        width: 100%;
-        display: block;
+    .our-content {
+        font-size: 16px;
     }
 
     .our-image-left {
-        display: block;
-        margin: 0px auto 0px auto;
         width: 100%;
+    }
+
+    .our-text-right {
+        width: 90%;
+        text-align: center;
     }
 }

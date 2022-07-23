@@ -1,0 +1,52 @@
+﻿
+.section {
+    padding: 0em 20em 0em 20em;
+    font-size: 18px;
+}
+
+.kingdom-content {
+    font-size: 18px;
+}
+
+.kingdom-image-left {
+    width: 100%;
+    float: right;
+}
+
+.kingdom-text-right {
+    margin-top: 1em;
+}
+
+.logo-image {
+    width: 75%;
+    display: block;
+    margin: 0px auto 0px auto;
+}
+
+.title {
+    margin-bottom: 2em;
+}
+
+@media screen and (max-width: 992px) {
+    .section {
+        padding: 0em 0em 0em 0em;
+        font-size: 15px;
+    }
+
+    .kingdom-content {
+        font-size: 15px;
+    }
+
+    .kingdom-image-left {
+        width: 100%;
+    }
+
+    .kingdom-text-right {
+        width: 90%;
+        text-align: center;
+    }
+
+    .logo-image {
+        margin: 3em auto 0px auto;
+    }
+}

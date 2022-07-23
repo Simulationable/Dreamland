@@ -2,20 +2,23 @@
     --maincolor: #0453A2;
 }
 
-@@font-face {
-    font-family: db_sathorn_xregular;
-    src: url('../font/db_sathorn_x_v3.2-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 html {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 body {
-    font-family: db_sathorn_xregular !important;
+    font-family: 'Prompt', sans-serif !important;
+    width: 100%;
 }
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
 .maincolor {
     color: var(--maincolor);
 }
@@ -40,9 +43,9 @@ bold {
     padding: 0px;
 }
 
-.page-content.page-header {
-    padding: 0px;
-}
+    .page-content.page-header {
+        padding: 0px;
+    }
 
 .title {
     color: var(--maincolor);
@@ -89,6 +92,15 @@ footer {
     }
 
 @media screen and (max-width: 992px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        width: 100%;
+        display: block;
+    }
+
     .header-logo {
         width: 40%;
         margin: 2em auto 2em auto;
