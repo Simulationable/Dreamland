@@ -1,30 +1,29 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    @*Import Meta Section*@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Dreamland</title>
-
-    @*Import Style Sheet Section*@
+    @*Import CSS*@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/dreamland.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
 
-    @*Import Javascript Section*@
+    @*Import Javascript*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/dreamland.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @*Import Utility Section*@
+    @*Import Utility*@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <div class="container-fluid">
-            <a asp-page="/Index"><img class="header-logo" src="~/images/Logo-Final-Blue.png" /></a>
+            <a asp-area="" asp-controller="Home" asp-action="Index"><img class="header-logo" src="~/images/Logo-Final-Blue.png" /></a>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light border-bottom">
             <div class="container-fluid">
@@ -35,14 +34,14 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-head active" aria-current="page" asp-page="/Index">DREAMLAND</a>
+                            <a class="nav-link nav-link-head active" asp-area="" asp-controller="Home" asp-action="Index">DREAMLAND</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 ทาวน์โฮม
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-page="/DreamPriva">DREAM PRIVA</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">DREAM PRIVA</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -50,11 +49,11 @@
                                 บ้านเดี่ยว/บ้านแฝด
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-page="/Index">RATIROM DELUXE</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">RATIROM DELUXE</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-item" aria-current="page" asp-page="/Promotion">โปรโมชั่น</a>
+                            <a class="nav-link nav-link-item" asp-area="" asp-controller="Promotion" asp-action="Index">โปรโมชั่น</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-item" aria-current="page" asp-page="/Index">ลูกบ้านสัมพันธ์</a>
@@ -64,13 +63,13 @@
                                 แบรนด์ดรีมแลนด์
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-page="/OurDream">OUR DREAM</a></li>
-                                <li><a class="dropdown-item" asp-page="/Company">COMPANY</a></li>
-                                <li><a class="dropdown-item" asp-page="/DreamlandKingdom">DREAMLAND KINGDOM</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="OurDream" asp-action="Index">OUR DREAM</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="OurCompany" asp-action="Index">COMPANY</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="OurKingdom" asp-action="Index">DREAMLAND KINGDOM</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-item" aria-current="page" asp-page="/Contact">ติดต่อเรา</a>
+                            <a class="nav-link nav-link-item" aria-current="page" asp-area="" asp-controller="Contact" asp-action="Index">ติดต่อเรา</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -120,6 +119,5 @@
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>
