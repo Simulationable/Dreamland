@@ -1,4 +1,4 @@
-namespace Dreamland.Web.Models
+namespace Dreamland.Domain.ViewModels
 {
     public class ErrorViewModel
     {

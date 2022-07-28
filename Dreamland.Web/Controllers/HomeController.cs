@@ -1,4 +1,4 @@
-﻿using Dreamland.Web.Models;
+﻿using Dreamland.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
