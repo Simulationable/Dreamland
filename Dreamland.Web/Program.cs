@@ -3,8 +3,11 @@ using Dreamland.Application.Configurations;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllersWithViews();
+builder.Services.AddMasterDataScopeCollection();
 builder.Services.AddProjectScopeCollection();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,7 +20,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
 app.UseAuthorization();

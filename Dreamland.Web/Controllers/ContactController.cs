@@ -1,4 +1,4 @@
-﻿using Dreamland.Infrastructure.Data.Interfaces;
+﻿using Dreamland.Application.Interfaces.MasterData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dreamland.Web.Controllers
@@ -7,7 +7,7 @@ namespace Dreamland.Web.Controllers
     {
         private readonly ILogger<ContactController> _logger;
         public ContactController(ILogger<ContactController> logger,
-            IProjectData projectData) : base(projectData)
+            IMasterDataServices masterDataServices) : base(masterDataServices)
         {
             _logger = logger;
         }

@@ -1,22 +1,22 @@
-﻿using Dreamland.Domain.Enums;
-using Dreamland.Infrastructure.Data.Interfaces;
+﻿using Dreamland.Application.Interfaces.MasterData;
+using Dreamland.Application.Interfaces.Projects;
+using Dreamland.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dreamland.Web.Controllers
 {
     public class BaseController : Controller
     {
-        private readonly IProjectData _projectData;
-
-        public BaseController(IProjectData projectData)
+        private readonly IMasterDataServices _masterDataServices;
+        public BaseController(IMasterDataServices masterDataServices)
         {
-            _projectData = projectData; ;
+            _masterDataServices = masterDataServices;
         }
 
         protected void SetMenu()
         {
-            ViewBag.townhomeList = _projectData.GetProjectList(ProjectType.TownHome);
-            ViewBag.houseList = _projectData.GetProjectList(ProjectType.House);
+            ViewBag.townhomeList = _masterDataServices.GetProjectListView(ProjectType.TownHome);
+            ViewBag.houseList = _masterDataServices.GetProjectListView(ProjectType.House);
         }
     }
 }

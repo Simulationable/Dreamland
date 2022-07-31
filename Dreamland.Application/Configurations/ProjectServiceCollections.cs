@@ -1,4 +1,6 @@
-﻿using Dreamland.Infrastructure.Data.Interfaces;
+﻿using Dreamland.Application.Interfaces.Projects;
+using Dreamland.Application.Services.Projects;
+using Dreamland.Infrastructure.Data.Interfaces;
 using Dreamland.Infrastructure.Data.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,6 +16,7 @@ namespace Dreamland.Application.Configurations
         public static void AddProjectScopeCollection(this IServiceCollection service)
         {
             service.AddScoped<IProjectData, ProjectData>();
+            service.AddScoped<IProjectServices, ProjectServices>();
         }
     }
 }

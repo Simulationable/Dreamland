@@ -12,16 +12,16 @@ namespace Dreamland.Infrastructure.Data.Repositories
 {
     public class ProjectData : IProjectData
     {
-        public List<Project> GetProjectList(ProjectType type)
+        public List<ProjectList> GetProjectList(ProjectType type)
         {
-            List<Project> listProject = new List<Project>();
+            List<ProjectList> listProject = new List<ProjectList>();
             if (type.Equals(ProjectType.TownHome))
             {
-                listProject.Add(new Project { Name = "Dream Priva", IsShow = true, IsActive = true });
+                listProject.Add(new ProjectList { Id = new Guid("00e4ed1f-0dde-4265-9f22-f82ca08e32e6"), Name = "Dream Priva", IsShow = true, IsActive = true });
             }
             else if (type.Equals(ProjectType.House))
             {
-                listProject.Add(new Project { Name = "Ratirom Deluxe", IsShow = true, IsActive = true });
+                listProject.Add(new ProjectList { Id = new Guid("0338dcc9-9db1-42fd-9c89-6aa3884bb52f"), Name = "Ratirom Deluxe", IsShow = true, IsActive = true });
             }
             return listProject;
         }
@@ -31,7 +31,7 @@ namespace Dreamland.Infrastructure.Data.Repositories
             ProjectItem project = new ProjectItem();
             if (id == 1)
             {
-                project.Id = new Guid();
+                project.Id = new Guid("00e4ed1f-0dde-4265-9f22-f82ca08e32e6");
                 project.Name = "Ratiron Deluxe";
                 project.Content = "";
                 project.CreatedAt = DateTime.Parse("2021-03-19T05:20:12.0000000Z");
@@ -39,7 +39,7 @@ namespace Dreamland.Infrastructure.Data.Repositories
             }
             else if (id == 2)
             {
-                project.Id = new Guid();
+                project.Id = new Guid("0338dcc9-9db1-42fd-9c89-6aa3884bb52f");
                 project.Name = "Dream Priva";
                 project.Content = "";
                 project.CreatedAt = DateTime.Parse("2021-03-19T05:20:12.0000000Z");

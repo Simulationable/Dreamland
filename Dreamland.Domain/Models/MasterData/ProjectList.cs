@@ -8,10 +8,16 @@ using System.Threading.Tasks;
 
 namespace Dreamland.Domain.Models.MasterData
 {
-    public class Project : BaseModel
+    public class ProjectList : BaseModel
     {
         public ProjectType ProjectType { get; set; }
         public bool? IsShow { get; set; }
         public bool? IsActive { get; set; }
+
+        public string EncodeID()
+        {
+            var data = System.Text.Encoding.UTF8.GetBytes(this.Id.ToString());
+            return System.Convert.ToBase64String(data); ;
+        }
     }
 }

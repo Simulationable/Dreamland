@@ -1,7 +1,5 @@
-﻿using Dreamland.Domain.Enums;
-using Dreamland.Domain.ViewModels;
+﻿using Dreamland.Application.Interfaces.MasterData;
 using Dreamland.Domain.ViewModels.Commons;
-using Dreamland.Infrastructure.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -11,7 +9,7 @@ namespace Dreamland.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         public HomeController(ILogger<HomeController> logger,
-            IProjectData projectData) : base(projectData)
+            IMasterDataServices masterDataServices) : base(masterDataServices)
         {
             _logger = logger;
         }

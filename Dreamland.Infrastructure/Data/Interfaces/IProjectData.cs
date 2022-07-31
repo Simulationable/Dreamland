@@ -10,6 +10,6 @@ namespace Dreamland.Infrastructure.Data.Interfaces
 {
     public interface IProjectData
     {
-        public List<Project> GetProjectList(ProjectType type);
+        List<ProjectList> GetProjectList(ProjectType type);
     }
 }
