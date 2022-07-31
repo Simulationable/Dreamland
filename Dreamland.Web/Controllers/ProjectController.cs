@@ -3,15 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dreamland.Web.Controllers
 {
-    public class OurCompanyController : BaseController
+    public class ProjectController : BaseController
     {
-        private readonly ILogger<OurCompanyController> _logger;
-        public OurCompanyController(ILogger<OurCompanyController> logger,
+        private readonly ILogger<ProjectController> _logger;
+        public ProjectController(ILogger<ProjectController> logger,
             IProjectData projectData) : base(projectData)
         {
             _logger = logger;
         }
-        public IActionResult Index()
+        public IActionResult TownhomeList()
         {
             SetMenu();
             return View();

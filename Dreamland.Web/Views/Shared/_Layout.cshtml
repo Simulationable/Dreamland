@@ -41,7 +41,11 @@
                                 ทาวน์โฮม
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">DREAM PRIVA</a></li>
+                                @foreach (var townhome in ViewBag.townhomeList)
+                                {
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Townhome" asp-route-id="@townhome.Id">@townhome.Name</a></li>
+                                }
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="TownhomeList">โครงการที่ผ่านมา.....</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -49,7 +53,11 @@
                                 บ้านเดี่ยว/บ้านแฝด
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">RATIROM DELUXE</a></li>
+                                @foreach (var house in ViewBag.houseList)
+                                {
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="House" asp-route-id="@house.Id">@house.Name</a></li>
+                                }
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="HouseList">โครงการที่ผ่านมา.....</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">

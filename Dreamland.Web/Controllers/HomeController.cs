@@ -1,25 +1,24 @@
-﻿using Dreamland.Domain.ViewModels;
+﻿using Dreamland.Domain.Enums;
+using Dreamland.Domain.ViewModels;
+using Dreamland.Domain.ViewModels.Commons;
+using Dreamland.Infrastructure.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Dreamland.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            IProjectData projectData) : base(projectData)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
+            SetMenu();
             return View();
         }
 

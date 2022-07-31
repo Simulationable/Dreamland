@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dreamland.Application\Dreamland.Application.csproj" />
     <ProjectReference Include="..\Dreamland.Domain\Dreamland.Domain.csproj" />
+    <ProjectReference Include="..\Dreamland.Infrastructure\Dreamland.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
