@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Dreamland</title>
+    @*Import CSS*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/dreamland.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
+
+    @*Import Javascript*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @*Import Utility*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <a asp-area="" asp-controller="Home" asp-action="Index"><img class="header-logo" src="~/images/Logo-Final-Blue.png" /></a>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-head active" asp-area="" asp-controller="Home" asp-action="Index">DREAMLAND</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ทาวน์โฮม
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach (var townhome in ViewBag.townhomeList)
+                                {
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Townhome" asp-route-id="@townhome.Id">@townhome.Name</a></li>
+                                }
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="TownhomeList">โครงการที่ผ่านมา.....</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                บ้านเดี่ยว/บ้านแฝด
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach (var house in ViewBag.houseList)
+                                {
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="House" asp-route-id="@house.Id">@house.Name</a></li>
+                                }
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="HouseList">โครงการที่ผ่านมา.....</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-item" asp-area="" asp-controller="Promotion" asp-action="Index">โปรโมชั่น</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-item" aria-current="page" asp-page="/Index">ลูกบ้านสัมพันธ์</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                แบรนด์ดรีมแลนด์
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="OurDream" asp-action="Index">OUR DREAM</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="OurCompany" asp-action="Index">COMPANY</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="OurKingdom" asp-action="Index">DREAMLAND KINGDOM</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-item" aria-current="page" asp-area="" asp-controller="Contact" asp-action="Index">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        @*<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">*@
+                        @*<button class="btn btn-outline-success" type="submit">Search</button>*@
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid page-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer border-top">
+        <div class="container-fluid">
+            <div class="row text-muted">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div class="footer-logo">
+                        <a asp-page="/Index"><img class="footer-logo" src="~/images/Logo-Final-Blue.png" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-contact">
+                    <span>ติดต่อทั่วไป</span><br />
+                    <span>Tel. : 02-422-0371-3</span><br />
+                    <span>Email: Dreamland.krungnon@gmail.com</span>
+                </div>
+                <div class="col-lg-2 col-md-12 footer-social">
+                    <span>Connect with Us</span>
+                    <div class="row">
+                        <div class="col-lg-4 col-6"><img class="footer-social-icon facebook-icon" src="~/images/icons/icons8-facebook-48.png" /></div>
+                        <div class="col-lg-8 col-6"><img class="footer-social-icon youtube-icon" src="~/images/icons/icons8-youtube-logo-48.png" /></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-copyright">
+                    <span>&copy;Dreamland Property Co.,LTD. All.</span><br />
+                    <span>Right Reserv.</span><br />
+                    <span>นโยบายความเป็นส่วนตัว</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

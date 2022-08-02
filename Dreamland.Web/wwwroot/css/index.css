@@ -1,0 +1,40 @@
+﻿.section-highlight {
+    padding: 0em 20em 0em 20em;
+}
+
+.section-legacy {
+    padding: 0em 20em 0em 20em;
+}
+
+.cards {
+    display: block;
+    margin: 0px auto 1em auto;
+}
+.card {
+    width: 415px;
+    height: 566px;
+    position: relative;
+    display: inline-block;
+}
+    .card .img-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 415px;
+        height: 566px;
+    }
+
+    .card .img-top {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 415px;
+        height: 566px;
+    }
+
+    .card:hover .img-top {
+        display: inline;
+    }

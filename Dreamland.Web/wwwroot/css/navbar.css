@@ -1,0 +1,24 @@
+﻿.navbar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown-menu {
+    border: 0px;
+}
+
+.nav-link-head {
+    color: var(--maincolor) !important;
+    font-weight: bold;
+}
+
+.nav-link-item {
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    margin: 0px 1em 0px 1em;
+}
+
+    .nav-link-item:hover {
+        color: var(--maincolor) !important;
+        border-bottom: 3px solid var(--maincolor) !important;
+    }

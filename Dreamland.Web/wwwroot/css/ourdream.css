@@ -1,0 +1,28 @@
+﻿
+.our-content {
+    font-size: 22px;
+}
+
+.our-image-left {
+    width: 50%;
+    float: right;
+}
+
+.our-text-right {
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 992px) {
+    .our-content {
+        font-size: 16px;
+    }
+
+    .our-image-left {
+        width: 100%;
+    }
+
+    .our-text-right {
+        width: 90%;
+        text-align: center;
+    }
+}

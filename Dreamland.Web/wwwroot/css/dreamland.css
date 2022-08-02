@@ -1,0 +1,156 @@
+﻿:root {
+    --maincolor: #0453A2;
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
+body {
+    font-family: 'Prompt', sans-serif !important;
+    width: 100%;
+}
+
+.pc {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+.maincolor {
+    color: var(--maincolor);
+}
+
+.mainsection {
+    background-color: var(--maincolor);
+    height: 3px !important;
+}
+
+.header-logo {
+    display: block;
+    width: 15%;
+    margin: 4em auto 4em auto;
+}
+
+bold {
+    font-weight: bold;
+}
+
+.page-content {
+    margin: 2em 0em 0em 0em;
+    padding: 0px;
+}
+
+    .page-content.page-header {
+        padding: 0px;
+    }
+
+.title {
+    color: var(--maincolor);
+    margin: 2em 0px 0px 0px;
+}
+
+.dreamland-button {
+    display: block;
+    margin: 2em auto 0px auto;
+    border: 2px solid transparent;
+    background-color: var(--maincolor);
+    color: white;
+    border-radius: 6px;
+    height: 42.5px;
+    width: 130px;
+}
+
+    .dreamland-button:hover {
+        border: 2px solid #5e97d1;
+        background-color: #5e97d1;
+    }
+
+footer {
+    position: relative !important;
+    margin: 2em 0em 2em 0em;
+    padding: 2em 0em 0em 0em;
+}
+
+.footer-logo {
+    width: 80%;
+}
+
+.footer-social-icon {
+}
+
+    .footer-social-icon.facebook-icon {
+        display: block;
+        margin-left: 40%;
+    }
+
+    .footer-social-icon.facebook-icon {
+        display: block;
+        margin-right: 100%;
+    }
+
+@media screen and (max-width: 992px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        width: 100%;
+        display: block;
+    }
+
+    .header-logo {
+        width: 40%;
+        margin: 2em auto 2em auto;
+    }
+
+    .page-content {
+        margin: 0em 0em 0em 0em;
+        padding: 0px;
+    }
+
+    .footer-logo {
+        width: 60%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-contact {
+        display: block;
+        margin: 1.5em auto 0em auto;
+        text-align: center;
+    }
+
+    .footer-social {
+        display: block;
+        margin: 1.5em auto 0em auto;
+        text-align: center;
+    }
+
+    .footer-social-icon {
+    }
+
+        .footer-social-icon.facebook-icon {
+            width: 20%;
+            display: block;
+            margin-left: 80%;
+        }
+
+        .footer-social-icon.youtube-icon {
+            width: 20%;
+            display: block;
+            margin-right: 80%;
+        }
+
+    .footer-copyright {
+        display: block;
+        margin: 1.5em auto 0em auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+}
