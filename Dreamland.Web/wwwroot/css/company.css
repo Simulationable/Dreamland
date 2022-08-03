@@ -1,4 +1,4 @@
-﻿
+
 .section {
     padding: 0em 20em;
     font-size: 18px;
@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 992px) {
     .section {
-        padding: 0px;
+        padding: 0em;
         font-size: 15px;
     }
 
@@ -47,6 +47,6 @@
     }
 
     .logo-image {
-        margin: 3em auto 0px auto;
+        margin: 3em auto 0px;
     }
 }

@@ -1,4 +1,4 @@
-﻿.section-highlight {
+.section-highlight {
     padding: 0em 20em;
 }
 
@@ -8,7 +8,7 @@
 
 .cards {
     display: block;
-    margin: 0px auto 1em auto;
+    margin: 0px auto 1em;
 }
 .card {
     width: 415px;
