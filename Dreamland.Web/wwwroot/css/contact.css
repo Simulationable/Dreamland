@@ -1,18 +1,18 @@
-﻿
+
 .section {
-    padding: 0em 20em 0em 20em;
+    padding: 0em 20em;
     font-size: 18px;
 }
 
 .contact-image {
     width: 25%;
     display: block;
-    margin: 0px auto 1em auto;
+    margin: 0px auto 1em;
 }
 
 @media screen and (max-width: 992px) {
     .section {
-        padding: 0em 0em 0em 0em;
+        padding: 0em;
         font-size: 15px;
     }
 }
