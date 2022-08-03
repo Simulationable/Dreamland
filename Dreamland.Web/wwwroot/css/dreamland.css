@@ -78,18 +78,15 @@ footer {
     width: 80%;
 }
 
-.footer-social-icon {
+.footer-social-icon.facebook-icon {
+    display: block;
+    margin-left: 40%;
 }
 
-    .footer-social-icon.facebook-icon {
-        display: block;
-        margin-left: 40%;
-    }
-
-    .footer-social-icon.facebook-icon {
-        display: block;
-        margin-right: 100%;
-    }
+.footer-social-icon.youtube-icon {
+    display: block;
+    margin-right: 100%;
+}
 
 @media screen and (max-width: 992px) {
     .pc {
@@ -130,27 +127,21 @@ footer {
         text-align: center;
     }
 
-    .footer-social-icon {
+    .footer-social-icon.facebook-icon {
+        width: 20%;
+        display: block;
+        margin-left: 80%;
     }
 
-        .footer-social-icon.facebook-icon {
-            width: 20%;
-            display: block;
-            margin-left: 80%;
-        }
-
-        .footer-social-icon.youtube-icon {
-            width: 20%;
-            display: block;
-            margin-right: 80%;
-        }
+    .footer-social-icon.youtube-icon {
+        width: 20%;
+        display: block;
+        margin-right: 80%;
+    }
 
     .footer-copyright {
         display: block;
         margin: 1.5em auto 0em;
         text-align: center;
     }
-}
-
-@media screen and (max-width: 600px) {
 }
