@@ -1,6 +1,6 @@
-﻿
+
 .section {
-    padding: 0em 20em 0em 20em;
+    padding: 0em 20em;
     font-size:18px;
 }
 
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 992px) {
     .section {
-        padding: 0em 0em 0em 0em;
+        padding: 0em;
         font-size: 15px;
     }
 

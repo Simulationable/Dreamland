@@ -1,14 +1,14 @@
-﻿.section-highlight {
-    padding: 0em 20em 0em 20em;
+.section-highlight {
+    padding: 0em 20em;
 }
 
 .section-legacy {
-    padding: 0em 20em 0em 20em;
+    padding: 0em 20em;
 }
 
 .cards {
     display: block;
-    margin: 0px auto 1em auto;
+    margin: 0px auto 1em;
 }
 .card {
     width: 415px;
