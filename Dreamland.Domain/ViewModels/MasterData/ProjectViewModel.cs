@@ -9,5 +9,6 @@ namespace Dreamland.Domain.ViewModels.MasterData
 {
     public class ProjectListViewModel : BaseViewModel
     {
+        public bool? IsShow { get; set; }
     }
 }

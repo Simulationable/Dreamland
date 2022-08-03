@@ -16,5 +16,10 @@ namespace Dreamland.Domain.Models.Common
         public string? UpdateBy { get; set; }
         public DateTime? DeleteAt { get; set; }
         public string? DeleteBy { get; set; }
+        public string EncodeID()
+        {
+            var data = System.Text.Encoding.UTF8.GetBytes(this.Id.ToString());
+            return System.Convert.ToBase64String(data);
+        }
     }
 }

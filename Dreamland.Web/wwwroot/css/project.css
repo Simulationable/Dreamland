@@ -1,0 +1,23 @@
+﻿
+.section {
+    padding: 0em 20em;
+    font-size: 18px;
+}
+
+
+.logo-image {
+    width: 75%;
+    display: block;
+    margin: 0px auto;
+}
+
+.title {
+    margin-bottom: 2em;
+}
+
+@media screen and (max-width: 992px) {
+    .section {
+        padding: 0em 0em 0em 0em;
+        font-size: 15px;
+    }
+}

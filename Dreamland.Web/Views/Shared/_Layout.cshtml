@@ -43,9 +43,12 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach (var townhome in ViewBag.townhomeList)
                                 {
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Townhome" asp-route-id="@townhome.Id">@townhome.Name</a></li>
+                                    @if (townhome.IsShow == true)
+                                    {
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Townhome" asp-route-id="@townhome.Id">@townhome.Name</a></li>
+                                    }
                                 }
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="TownhomeList">โครงการที่ผ่านมา.....</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="TownhomeListView">โครงการที่ผ่านมา.....</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -55,9 +58,12 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach (var house in ViewBag.houseList)
                                 {
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="House" asp-route-id="@house.Id">@house.Name</a></li>
+                                    @if (house.IsShow == true)
+                                    {
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="House" asp-route-id="@house.Id">@house.Name</a></li>
+                                    }
                                 }
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="HouseList">โครงการที่ผ่านมา.....</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="HouseListView">โครงการที่ผ่านมา.....</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
