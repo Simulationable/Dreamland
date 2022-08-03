@@ -1,6 +1,6 @@
 ﻿
 .section {
-    padding: 0em 20em 0em 20em;
+    padding: 0em 20em;
     font-size: 18px;
 }
 
@@ -20,7 +20,7 @@
 .logo-image {
     width: 75%;
     display: block;
-    margin: 0px auto 0px auto;
+    margin: 0px auto;
 }
 
 .title {
@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 992px) {
     .section {
-        padding: 0em 0em 0em 0em;
+        padding: 0px;
         font-size: 15px;
     }
 

@@ -4,15 +4,20 @@
     font-size: 18px;
 }
 
-.contact-image {
-    width: 25%;
+
+.logo-image {
+    width: 75%;
     display: block;
-    margin: 0px auto 1em auto;
+    margin: 0px auto;
+}
+
+.title {
+    margin-bottom: 2em;
 }
 
 @media screen and (max-width: 992px) {
     .section {
-        padding: 0px;
+        padding: 0em 0em 0em 0em;
         font-size: 15px;
     }
 }

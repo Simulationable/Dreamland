@@ -1,0 +1,86 @@
+﻿@page
+
+<link rel="stylesheet" href="~/css/project.css" asp-append-version="true" />
+
+<h4 class="title text-center mb-3"><bold>Townhome</bold></h4>
+<h6 class="text-center mb-3">โครงการเด่นของเรา</h6>
+
+<div id="carouselTownhome" class="carousel slide mb-5" data-bs-ride="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselTownhome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselTownhome" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselTownhome" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
+
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
+
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
+
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTownhome" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselTownhome" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="section">
+    <div class="row mx-3 mb-3">
+        <div class="col-12">
+            <span class="text-muted">หากคุณกำลังมองหาโครงการทาวน์โฮมแถวพระราม 5 โครงการของเราตั้งอยู่บนทำเลศักยภาพย่านสวนผัก 32 เชื่อมต่อไปยัง ย่านราชพฤกษ์ ปิ่นเกล้า, พระราม 5 และใจกลางเมืองได้ง่ายดาย คุ้มค่ากับทำเลคุณภาพ เราลงทุนในเรื่องของวัสดุชั้นดี แม้แต่ในจุดเล็กๆ น้อยๆ ไม่ว่าจะเป็น ขอบประตูหน้าต่าง หลังคา กระเบื้องนอกจากนี้เรายังเพิ่มในส่วนของหลังคาเมทัลชีทพร้อมรางน้ำฝนเพื่อเพิ่มความสะดวก และช่วยลูกบ้านประหยัดค่าใช้จ่าย สามารถป้องกันปัญหาหากมีการต่อเติมที่ไม่ได้มาตรฐาน</span>
+        </div>
+    </div>
+    <h4 class="title text-center mb-3"><bold>โครงการของเรา</bold></h4>
+    <div class="row mb-3">
+        @foreach (var item in ViewBag.townhomeListView)
+        {
+            <div class="col-12 col-md-4 text-center">
+                <img src="" />
+                <h4>@item.Name</h4>
+                <h5>@Html.Raw(item.Caption)</h5>
+                @if(item.IsSoldOut == true)
+                {
+                    <h5 class="maincolor">@item.Price</h5>
+                }
+                else
+                {
+                    <h5 class="text-danger">@item.Price</h5>
+                }
+            </div>
+        }
+    </div>
+    <div class="row mx-3">
+        <div class="col-12">
+            <span class="text-muted">เพราะเราเอา”ใจของลูกค้า”มาใส่ใจของเรา โครงการทาวน์โฮมคุณภาพ จาก Dreamland Property จึงไม่เพียงแค่โดดเด่นทั้งในด้านคุณภาพการก่อสร้าง และวัสดุที่เราคัดสรรมาอย่างดี แต่ในด้านทำเลที่ตั้งก็โดดเด่น ตั้งอยู่บนทำเลศักยภาพย่านสวนผัก 32 การเดินทางเข้าออกสะดวก เชื่อมต่อถนนหลายสาย ไม่ว่าจะเป็น ถนนราชพฤกษ์ ถนนบรมราชชนนี ถนนกาญจนาภิเษก และถนนพระราม5-นครอินทร์ รายล้อมไปด้วยแหล่งช้อปปิ้งมากมาย ทั้ง The Crystal SB, The Walk, Central ปิ่นเกล้า ยิ่งไปกว่านั้นเราพร้อมดูแลลูกบ้านทุกหลังเหมือนคนในครอบครัว เราใส่ใจในการให้บริการหลังการขาย เพื่อความสุขสบายใจของลูกบ้าน Dreamland ทุกคน</span>
+        </div>
+    </div>
+    <h4 class="title text-center mb-5"><bold>ความสุขบนพื้นที่ที่ใหญ่กว่า กับคุณภาพที่เราใส่ใจเพื่อคุณ</bold></h4>
+    <div class="row mx-3">
+        <div class="col-12">
+            <span class="text-muted">โครงการทาวน์โฮมทั้งหมดของเรา ตั้งอยู่บนทำเลศักยภาพ สวนผัก 32 อันแสนสะดวก ไม่ว่าจะในเรื่องของการเดินทาง แหล่งของกิน และศูนย์การค้า เป็นย่านศูนย์กลางซึ่งเชื่อมต่อไปยัง ราชพฤกษ์, พระราม 5, ตลิ่งชัน, ปิ่นเกล้า, บางกรวย และราชพฤกษ์-สาทร การเชื่อมต่ออันหลากหลายจึงทำให้การเดินทางเข้าเมืองสะดวกอย่างมาก อีกทั้งโครงการทั้งหมดนี้เราเลือกใช้วัสดุคุณภาพสูง ตัวทาวน์โฮมมีโครงสร้างแข็งแรง อยู่ได้นานคงทนในระยะยาว อีกทั้งยังมีขนาดใหญ่ตั้งแต่ 20 ตารางวาขึ้นไป เพื่อให้ลูกบ้านสามารถใช้ประโยชน์จากพื้นที่ได้อย่างแท้จริง อยู่อาศัยแล้วรู้สึกสบาย ปลอดโปร่ง ไม่แออัด อีกทั้งเรายังดูแลลูกบ้านทุกโครงการด้วย “ใจ” พิสูจน์แล้ว จากบริการหลังการขาย และการยอมรับจากลูกบ้านทุกๆ โครงการ ที่แนะนำญาติ และเพื่อนๆ ให้มาซื้อบ้านกับเราอย่างมากมาย เรียกได้ว่าเรามีฐานลูกค้าที่มั่นใจในคุณภาพ และ บริการหลังการขายที่พร้อมช่วยเหลือลูกบ้านทุกๆ คนเสมอเมื่อเรียกใช้บริการ</span>
+        </div>
+    </div>
+</div>
