@@ -16,10 +16,12 @@ namespace Dreamland.Domain.Models.Common
         public string? UpdateBy { get; set; }
         public DateTime? DeleteAt { get; set; }
         public string? DeleteBy { get; set; }
-        public string EncodeID()
+        public bool? IsShow { get; set; }
+        public bool? IsActive { get; set; }
+
+        public string GetFullDate()
         {
-            var data = System.Text.Encoding.UTF8.GetBytes(this.Id.ToString());
-            return System.Convert.ToBase64String(data);
+            return CreatedAt.Value.ToString("d MMMM, yyyy");
         }
     }
 }

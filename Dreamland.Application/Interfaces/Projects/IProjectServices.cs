@@ -11,6 +11,6 @@ namespace Dreamland.Application.Interfaces.Projects
 {
     public interface IProjectServices
     {
-        List<ProjectItemListViewModel> GetProjectItemList(ProjectType projectType);
+        List<ProjectItemListViewModel> GetProjectItemList(ProjectTypes projectType);
     }
 }

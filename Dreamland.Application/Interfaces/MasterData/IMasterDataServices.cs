@@ -10,6 +10,6 @@ namespace Dreamland.Application.Interfaces.MasterData
 {
     public interface IMasterDataServices
     {
-        List<ProjectListViewModel> GetProjectListView(ProjectType projectType);
+        List<ProjectListViewModel> GetProjectListView(ProjectTypes projectType);
     }
 }

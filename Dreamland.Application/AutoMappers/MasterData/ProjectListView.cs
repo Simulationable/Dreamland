@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dreamland.Application.Helper.Cryptography;
 using Dreamland.Domain.Models.MasterData;
 using Dreamland.Domain.ViewModels.MasterData;
 using System;
@@ -14,7 +15,10 @@ namespace Dreamland.Application.AutoMappers.MasterData
         public ProjectListView ()
         {
             CreateMap<ProjectList, ProjectListViewModel>()
-                .AfterMap((s,d) => d.Id = s.EncodeID());
+                .ForMember(dest => dest.Id, options => options.MapFrom(src => AES.Encrypt(src.Id.ToString())));
+
+            CreateMap<ProjectListViewModel, ProjectList>()
+                .ForMember(dest => dest.Id, options => options.MapFrom(src => new Guid(AES.DecryptToString(src.Id))));
         }
     }
 }

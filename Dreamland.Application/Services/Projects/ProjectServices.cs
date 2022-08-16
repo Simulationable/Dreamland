@@ -24,11 +24,10 @@ namespace Dreamland.Application.Services.Projects
             _mapper = mapper;
         }
 
-        public List<ProjectItemListViewModel> GetProjectItemList(ProjectType projectType)
+        public List<ProjectItemListViewModel> GetProjectItemList(ProjectTypes projectType)
         {
-            var projectList = _projectData.GetProjectList(projectType);
-            var projectListViewModel = _mapper.Map<List<ProjectList>, List<ProjectItemListViewModel>>(projectList);
-            return projectListViewModel;
+            var projectList = _projectData.GetProjectList(projectType);;
+            return _mapper.Map<List<ProjectList>, List<ProjectItemListViewModel>>(projectList);
         }
     }
 }

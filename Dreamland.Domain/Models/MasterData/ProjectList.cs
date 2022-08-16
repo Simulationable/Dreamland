@@ -10,12 +10,10 @@ namespace Dreamland.Domain.Models.MasterData
 {
     public class ProjectList : BaseModel
     {
-        public ProjectType ProjectType { get; set; }
+        public ProjectTypes ProjectType { get; set; }
         public string? Image { get; set; }
         public string? Caption { get; set; }
         public string? Price { get; set; }
         public bool IsSoldOut { get; set; }
-        public bool? IsShow { get; set; }
-        public bool? IsActive { get; set; }
     }
 }

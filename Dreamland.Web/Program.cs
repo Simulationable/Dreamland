@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddMasterDataScopeCollection();
 builder.Services.AddProjectScopeCollection();
+builder.Services.AddPostScopeCollection();
 
 var app = builder.Build();
 

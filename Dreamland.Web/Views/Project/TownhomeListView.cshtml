@@ -54,25 +54,34 @@
         </div>
     </div>
     <h4 class="title text-center mb-3"><bold>โครงการของเรา</bold></h4>
-    <div class="row mb-3">
-        @foreach (var item in ViewBag.townhomeListView)
-        {
-            <div class="col-12 col-md-4 text-center">
-                <img src="" />
-                <h4>@item.Name</h4>
-                <h5>@Html.Raw(item.Caption)</h5>
-                @if(item.IsSoldOut == true)
+</div>
+<div class="row mb-5 mx-5">
+    @foreach (var item in ViewBag.townhomeListView)
+    {
+        <div class="col-12 col-md-4 text-center mt-3">
+            <div class="image-container">
+                <img src="@item.Image" width="360" height="240" />
+                @if (item.IsSoldOut == true)
                 {
-                    <h5 class="maincolor">@item.Price</h5>
-                }
-                else
-                {
-                    <h5 class="text-danger">@item.Price</h5>
+                    <div class="image-overlay-background"></div>
+                    <div class="image-overlay-text-centered "><bold>SOLD OUT</bold></div>
                 }
             </div>
-        }
-    </div>
-    <div class="row mx-3">
+            <h4 class="mt-3"><bold>@item.Name</bold></h4>
+            <h5>@Html.Raw(item.Caption)</h5>
+            @if (item.IsSoldOut == true)
+            {
+                <h5 class="maincolor">@item.Price</h5>
+            }
+            else
+            {
+                <h5 class="text-danger">@item.Price</h5>
+            }
+        </div>
+    }
+</div>
+<div class="section">
+    <div class="row mt-3 mx-3">
         <div class="col-12">
             <span class="text-muted">เพราะเราเอา”ใจของลูกค้า”มาใส่ใจของเรา โครงการทาวน์โฮมคุณภาพ จาก Dreamland Property จึงไม่เพียงแค่โดดเด่นทั้งในด้านคุณภาพการก่อสร้าง และวัสดุที่เราคัดสรรมาอย่างดี แต่ในด้านทำเลที่ตั้งก็โดดเด่น ตั้งอยู่บนทำเลศักยภาพย่านสวนผัก 32 การเดินทางเข้าออกสะดวก เชื่อมต่อถนนหลายสาย ไม่ว่าจะเป็น ถนนราชพฤกษ์ ถนนบรมราชชนนี ถนนกาญจนาภิเษก และถนนพระราม5-นครอินทร์ รายล้อมไปด้วยแหล่งช้อปปิ้งมากมาย ทั้ง The Crystal SB, The Walk, Central ปิ่นเกล้า ยิ่งไปกว่านั้นเราพร้อมดูแลลูกบ้านทุกหลังเหมือนคนในครอบครัว เราใส่ใจในการให้บริการหลังการขาย เพื่อความสุขสบายใจของลูกบ้าน Dreamland ทุกคน</span>
         </div>

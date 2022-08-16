@@ -15,8 +15,8 @@ namespace Dreamland.Web.Controllers
 
         protected void SetMenu()
         {
-            ViewBag.townhomeList = _masterDataServices.GetProjectListView(ProjectType.TownHome);
-            ViewBag.houseList = _masterDataServices.GetProjectListView(ProjectType.House);
+            ViewBag.townhomeList = _masterDataServices.GetProjectListView(ProjectTypes.TownHome);
+            ViewBag.houseList = _masterDataServices.GetProjectListView(ProjectTypes.House);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Dreamland.Application.Services.MasterData
             _projectData = projectData;
             _mapper = mapper;
         }
-        public List<ProjectListViewModel> GetProjectListView(ProjectType projectType)
+        public List<ProjectListViewModel> GetProjectListView(ProjectTypes projectType)
         {
             var projectList = _projectData.GetProjectList(projectType);
             var projectListView = _mapper.Map<List<ProjectList>, List<ProjectListViewModel>>(projectList);

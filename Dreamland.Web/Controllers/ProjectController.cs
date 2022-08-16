@@ -19,13 +19,13 @@ namespace Dreamland.Web.Controllers
         public IActionResult TownhomeListView()
         {
             SetMenu();
-            ViewBag.townhomeListView = _projectServices.GetProjectItemList(ProjectType.TownHome);
+            ViewBag.townhomeListView = _projectServices.GetProjectItemList(ProjectTypes.TownHome);
             return View();
         }
         public IActionResult HouseListView()
         {
             SetMenu();
-            ViewBag.houseListView = _projectServices.GetProjectItemList(ProjectType.House);
+            ViewBag.houseListView = _projectServices.GetProjectItemList(ProjectTypes.House);
             return View();
         }
     }

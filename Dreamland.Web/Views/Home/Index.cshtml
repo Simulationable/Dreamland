@@ -50,7 +50,7 @@
     <div>
         <h3 class="title text-center">เรื่องดีๆ ที่เราอยากเล่า</h3>
         <hr class="mainsection" />
-        <button type="button" class="dreamland-button">Read More</button>
+        <button type="button" class="dreamland-button" onclick="location.href='@Url.Action("Index", "OurDream")'">Read More</button>
     </div>
 </div>
 
@@ -59,27 +59,21 @@
         <h3 class="title text-center">เรื่องราวของเรา</h3>
         <hr class="mainsection" />
         <div class="cards">
-            <a asp-page="/OurDream">
-                <div class="card">
-                    <img src="~/images/legacy/leftback.jpg" class="img-back">
-                    <img src="~/images/legacy/leftfront.jpg" class="img-top">
-                </div>
-            </a>
-            <a asp-page="/Privacy">
-                <div class="card">
-                    <img src="~/images/legacy/middleback.jpg" class="img-back">
-                    <img src="~/images/legacy/middlefront.jpg" class="img-top">
-                </div>
-            </a>
-            <a asp-page="/Privacy">
-                <div class="card">
-                    <img src="~/images/legacy/rightback.jpg" class="img-back">
-                    <img src="~/images/legacy/rightfront.jpg" class="img-top">
-                </div>
-            </a>
+            <div class="card">
+                <img src="~/images/legacy/leftback.jpg" class="img-back">
+                <img src="~/images/legacy/leftfront.jpg" class="img-top" onclick="location.href='@Url.Action("Index", "OurDream")'">
+            </div>
+            <div class="card">
+                <img src="~/images/legacy/middleback.jpg" class="img-back">
+                <img src="~/images/legacy/middlefront.jpg" class="img-top" onclick="location.href='@Url.Action("Index", "OurCompany")'">
+            </div>
+            <div class="card">
+                <img src="~/images/legacy/rightback.jpg" class="img-back">
+                <img src="~/images/legacy/rightfront.jpg" class="img-top" onclick="location.href='@Url.Action("Index", "OurKingdom")'">
+            </div>
         </div>
         <p class="text-center text-muted">เราสร้างบ้านคุณเหมือนเราสร้างบ้านเรา และดูแลความฝันของคุณเหมือนความฝันของเรา</p>
         <h5 class="maincolor text-center">"เพราะเราเชื่อว่า....ความสุขเริ่มต้นที่บ้าน"</h5>
-        <button type="button" class="dreamland-button">Read More</button>
+        <button type="button" class="dreamland-button" onclick="location.href='@Url.Action("Index", "OurDream")'">Read More</button>
     </div>
 </div>

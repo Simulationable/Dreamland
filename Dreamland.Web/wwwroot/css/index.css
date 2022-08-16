@@ -38,3 +38,21 @@
     .card:hover .img-top {
         display: inline;
     }
+
+@media screen and (max-width: 992px) {
+    .section-highlight {
+        padding: 0em;
+    }
+
+    .section-legacy {
+        padding: 0em;
+    }
+
+    .card .img-back {
+        display: none;
+    }
+
+    .card .img-top {
+        display: block;
+    }
+}

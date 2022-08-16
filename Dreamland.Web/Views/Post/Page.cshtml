@@ -1,0 +1,27 @@
+﻿<link rel="stylesheet" href="~/css/post.css" asp-append-version="true" />
+
+<div class="section">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="title text-center">@ViewBag.postItem.Name</h2>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-12">
+            <h4 class="text-center">@ViewBag.postItem.Category</h4>
+            <h4 class="text-center">@ViewBag.postItem.Date</h4>
+        </div>
+    </div>
+    <img src="@ViewBag.postItem.TitleImage" style="width:100%"/>
+    <div class="row mb-2">
+        <div class="col-12 mx-3">
+            @Html.Raw(@ViewBag.postItem.Content)
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-12">
+            <h4 class="title text-center">YOU MAY ALSO LIKE</h4>
+        </div>
+    </div>
+</div>
