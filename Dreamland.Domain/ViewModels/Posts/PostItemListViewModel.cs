@@ -9,6 +9,7 @@ namespace Dreamland.Domain.ViewModels.Posts
 {
     public class PostItemListViewModel : BaseViewModel
     {
+        public int? Pin { get; set; }
         public string? PostCategories { get; set; }
         public string? PostSubCategories { get; set; }
         public string? TitleImage { get; set; }

@@ -20,7 +20,7 @@ namespace Dreamland.Application.AutoMappers.Posts
                 .ForMember(dest => dest.Name, options => options.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Category, options => options.MapFrom(src => src.FormatPostCategories() + " - " + src.FormatPostSubCategories()))
                 .ForMember(dest => dest.Date, options => options.MapFrom(src => src.GetFullDate()))
-                .ForMember(dest => dest.TitleImage, options => options.MapFrom(src => HttpContextHelper.MapUrl() + src.TitleImage))
+                .ForMember(dest => dest.TitleImage, options => options.MapFrom(src => src.TitleImage.Contains("https:") ? src.TitleImage : "https://localhost:44309/" + src.TitleImage))
                 .ForMember(dest => dest.Content, options => options.MapFrom(src => src.Content));
         }
     }

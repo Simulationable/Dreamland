@@ -16,6 +16,11 @@ namespace Dreamland.Web.Controllers
             _logger = logger;
             _projectServices = projectServices;
         }
+        public IActionResult Index()
+        {
+            SetMenu();
+            return View();
+        }
         public IActionResult TownhomeListView()
         {
             SetMenu();

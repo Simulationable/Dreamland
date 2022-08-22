@@ -10,6 +10,7 @@ namespace Dreamland.Application.Interfaces.Posts
 {
     public interface IPostServices
     {
+        public Task<List<PostItemListViewModel>> GetPinPostList(PostSubCategories postSubCategories);
         public Task<List<PostItemListViewModel>> GetPostList(PostSubCategories postSubCategories);
         public Task<PostItemViewModel> GetPostByIdAsync(Guid id);
     }

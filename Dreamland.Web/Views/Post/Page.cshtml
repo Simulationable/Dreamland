@@ -6,22 +6,91 @@
             <h2 class="title text-center">@ViewBag.postItem.Name</h2>
         </div>
     </div>
-    <div class="row mb-2">
+    <div class="row mb-3">
         <div class="col-12">
             <h4 class="text-center">@ViewBag.postItem.Category</h4>
             <h4 class="text-center">@ViewBag.postItem.Date</h4>
         </div>
     </div>
-    <img src="@ViewBag.postItem.TitleImage" style="width:100%"/>
-    <div class="row mb-2">
+    @if (@ViewBag.postItem.TitleImage != null)
+    {
+        <img src="@ViewBag.postItem.TitleImage" style="width:100%" />
+    }
+    <div class="row mb-2 mt-5">
         <div class="col-12 mx-3">
             @Html.Raw(@ViewBag.postItem.Content)
         </div>
     </div>
+</div>
+@if (ViewBag.postItem.ShowGallery == true)
+{
+    <div class="row">
+        <div class="col-12">
+            <h1 class="page-header text-center maincolor">Gallery</h1>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in ViewBag.postItem.GalleryItems)
+        {
+            <div class="col-3 mt-3">
+                <a href="#">
+                    <img onclick="ModalPopup(this.alt)" src="@item.Thumbnail" style="width:100%;" alt="@item.Image">
+                </a>
+            </div>
+        }
+    </div>
+
+    <div id="gallery-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+}
+<div class="section">
+    @if (ViewBag.postItem.VideoLink != null)
+    {
+        <div class="row mt-3">
+            <center>@Html.Raw(ViewBag.postItem.VideoLink)</center>
+        </div>
+    }
     <hr />
     <div class="row">
         <div class="col-12">
             <h4 class="title text-center">YOU MAY ALSO LIKE</h4>
         </div>
     </div>
+    <div class="row">
+        @foreach (var post in ViewBag.postItem.RelatePosts)
+        {
+            if (post != null)
+            {
+                <div class="col-12 col-md-4 mt-3">
+                    <div class="row">
+                        <a href="@Url.Action("Page", "Post" , new { id = post.Id })"><img src="@post.TitleImage" style="width: 100%" /></a>
+                    </div>
+                    <div class="row" style="inline-size: 403px;text-overflow: ellipsis;">
+                        <a href="@Url.Action("Page", "Post" , new { id = post.Id })"><h5 class="maincolor mt-3" style="word-wrap: normal" onclick="location.href='@Url.Action("Page", "Post" , new { id = post.Id })'">@post.Name</h5></a>
+                        <span>@Html.Raw(@post.Description)</span>
+                    </div>
+                </div>
+            }
+        }
+    </div>
 </div>
+
+<script>
+    var modal = document.getElementById("gallery-modal");
+
+    var modalImg = document.getElementById("modal-image");
+
+    function ModalPopup(value) {
+        modal.style.display = "block";
+        modalImg.src = value;
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>

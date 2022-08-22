@@ -15,13 +15,23 @@ namespace Dreamland.Application.Services.Posts
     public class PostServices : IPostServices
     {
         private readonly IPostData _postData;
+        private readonly IGalleryData _galleryData;
         private readonly IMapper _mapper;
         public PostServices(IPostData postData,
+            IGalleryData galleryData,
             IMapper mapper)
         {
             _postData = postData;
+            _galleryData = galleryData;
             _mapper = mapper;
         }
+        public async Task<List<PostItemListViewModel>> GetPinPostList(PostSubCategories postSubCategories)
+        {
+            var query = await _postData.GetPostItemsAsync(postSubCategories);
+            var result = query.Where(x => x.Pin != null).OrderBy(x => x.Pin).ToList();
+            return _mapper.Map<List<PostItem>, List<PostItemListViewModel>>(result);
+        }
+
         public async Task<List<PostItemListViewModel>> GetPostList(PostSubCategories postSubCategories)
         {
             var query = await _postData.GetPostItemsAsync(postSubCategories);
@@ -36,6 +46,10 @@ namespace Dreamland.Application.Services.Posts
                 var result = query.Where(x => x.Id == id).FirstOrDefault();
                 if(result!=null)
                 {
+                    if(result.ShowGallery==true)
+                    {
+                        result.GalleryItems = _galleryData.GetGalleryItem(result.GalleryId);
+                    }
                     result.RelatePosts = new List<PostItem>();
                     if (query.Where(x => x.CreatedAt < result.CreatedAt).Count() > 0)
                         result.RelatePosts.Add(query.Where(x => x.CreatedAt < result.CreatedAt).OrderByDescending(x => x.CreatedAt).FirstOrDefault());
@@ -49,6 +63,7 @@ namespace Dreamland.Application.Services.Posts
                             result.RelatePosts.Add(query.Where(x => x.CreatedAt > pivotDate && x.Id != result.Id).OrderBy(x => x.CreatedAt).FirstOrDefault());
                         else
                             result.RelatePosts.Add(query.Where(x => x.CreatedAt < pivotDate && x.Id != result.Id).OrderBy(x => x.CreatedAt).FirstOrDefault());
+                        if(result.RelatePosts.Last()!=null)
                         pivotDate = result.RelatePosts.Last().CreatedAt;
                     }
                     return _mapper.Map<PostItem, PostItemViewModel>(result);

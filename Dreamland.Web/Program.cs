@@ -8,6 +8,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddMasterDataScopeCollection();
 builder.Services.AddProjectScopeCollection();
 builder.Services.AddPostScopeCollection();
+builder.Services.AddGalleryScopeCollection();
 
 var app = builder.Build();
 

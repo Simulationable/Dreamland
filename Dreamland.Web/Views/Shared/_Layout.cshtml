@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
@@ -45,7 +45,7 @@
                                 {
                                     @if (townhome.IsShow == true)
                                     {
-                                        <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Townhome" asp-route-id="@townhome.Id">@townhome.Name</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Index" asp-route-id="@townhome.Id">@townhome.Name</a></li>
                                     }
                                 }
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="TownhomeListView">โครงการที่ผ่านมา.....</a></li>
@@ -60,7 +60,7 @@
                                 {
                                     @if (house.IsShow == true)
                                     {
-                                        <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="House" asp-route-id="@house.Id">@house.Name</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="Index" asp-route-id="@house.Id">@house.Name</a></li>
                                     }
                                 }
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Project" asp-action="HouseListView">โครงการที่ผ่านมา.....</a></li>

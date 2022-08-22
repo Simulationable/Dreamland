@@ -8,6 +8,11 @@ namespace Dreamland.Domain.Enums
 {
     public enum PostCategories
     {
-        DLFamily = 1
+        Dreamland = 0,
+        DLFamily = 1,
+        RatiromFifth = 2,
+        DreamDeluxe = 3,
+        RatiromDeluxe = 4,
+        DreamPriva = 5
     }
 }

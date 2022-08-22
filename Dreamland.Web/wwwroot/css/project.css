@@ -15,9 +15,19 @@
     margin-bottom: 2em;
 }
 
+/* Centered text */
+.image-overlay-text-price {
+    position: absolute;
+    top: 69.5%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.25em;
+}
+
 @media screen and (max-width: 992px) {
     .section {
-        padding: 0em 0em 0em 0em;
+        padding: 0em;
         font-size: 15px;
     }
 }

@@ -10,6 +10,7 @@ namespace Dreamland.Domain.Enums
     {
         All = 0,
         Testimonails = 1,
-        Activity = 2
+        Activity = 2,
+        Hightlight = 3
     }
 }
