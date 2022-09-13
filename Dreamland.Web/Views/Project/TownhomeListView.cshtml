@@ -94,12 +94,14 @@
     {
         <div class="col-12 col-md-4 text-center mt-3">
             <div class="image-container">
-                <img src="@item.Image" width="360" height="240" />
-                @if (item.IsSoldOut == true)
-                {
-                    <div class="image-overlay-background"></div>
-                    <div class="image-overlay-text-centered "><bold>SOLD OUT</bold></div>
-                }
+                <a class="nav-link nav-link-head active" asp-area="" asp-controller="Project" asp-action="Index" asp-route-id="@item.Id">
+                    <img src="@item.Image" width="360" height="240" />
+                    @if (item.IsSoldOut == true)
+                    {
+                        <div class="image-overlay-background"></div>
+                        <div class="image-overlay-text-centered "><bold>SOLD OUT</bold></div>
+                    }
+                </a>
             </div>
             <h4 class="mt-3"><bold>@item.Name</bold></h4>
             <h5>@Html.Raw(item.Caption)</h5>

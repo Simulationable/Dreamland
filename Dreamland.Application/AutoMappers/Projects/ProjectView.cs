@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dreamland.Application.Helper.Cryptography;
 using Dreamland.Domain.Models.MasterData;
 using Dreamland.Domain.ViewModels.MasterData;
 using Dreamland.Domain.ViewModels.Projects;
@@ -15,7 +16,8 @@ namespace Dreamland.Application.AutoMappers.MasterData
         public ProjectView ()
         {
             CreateMap<ProjectList, ProjectItemListViewModel>()
-                .AfterMap((s,d) => d.Price = s.IsSoldOut ? "Sold Out" : "ราคาเริ่มต้น " + s.Price + " ล้านบาท");
+                .ForMember(dest => dest.Id, options => options.MapFrom(src => AES.Encrypt(src.Id.ToString())))
+                .ForMember(dest => dest.Price, options => options.MapFrom(src => src.IsSoldOut ? "Sold Out" : "ราคาเริ่มต้น " + src.Price + " ล้านบาท"));
         }
     }
 }

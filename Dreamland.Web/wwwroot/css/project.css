@@ -4,6 +4,16 @@
     font-size: 18px;
 }
 
+.custom-tab {
+    color: #0b54a3 !important;
+    background-color: white !important;
+    border-radius: 0px !important;
+    border-bottom: solid 5px transparent;
+}
+
+    .custom-tab.active {
+        border-bottom: solid 5px #0b54a3;
+    }
 
 .logo-image {
     width: 75%;
