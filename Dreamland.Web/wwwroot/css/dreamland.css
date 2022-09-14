@@ -18,6 +18,10 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+.carousel-item {
+    max-height: 456.71px !important;
+}
+
 a {
     text-decoration: none;
 }
