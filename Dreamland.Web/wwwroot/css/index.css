@@ -15,34 +15,32 @@
     margin: 0px auto 1em;
 }
 
-#legacy-section-image {
-    display: block;
-    margin: 0px auto;
-}
-
 .card {
-    width: 415px;
-    height: 566px;
+    width: 30%;
     position: relative;
     display: inline-block;
 }
+
+    .card .img-hidden {
+        width: 100%;
+        visibility: hidden;
+    }
+
     .card .img-back {
+        width: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 99;
-        width: 415px;
-        height: 566px;
     }
 
     .card .img-top {
+        width: 100%;
         display: none;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 99;
-        width: 415px;
-        height: 566px;
     }
 
     .card:hover .img-top {
