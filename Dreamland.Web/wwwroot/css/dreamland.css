@@ -21,6 +21,7 @@ body {
 a {
     text-decoration: none;
 }
+
 .pc {
     display: block;
 }
@@ -231,6 +232,21 @@ footer {
         text-decoration: none;
         cursor: pointer;
     }
+
+@media screen and (max-width: 1280px) {
+
+    .slide-header {
+        font-size: 1.5em !important;
+    }
+
+    .silde-price {
+        font-size: 1.117em !important;
+    }
+
+    .slide-description {
+        font-size: 1em !important;
+    }
+}
 
 @media screen and (max-width: 992px) {
 
